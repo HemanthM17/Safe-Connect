@@ -3,12 +3,13 @@
     "firebase": "^11.10.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.8"
+    "@types/react": "^19.1.8",
+    "vite": "^5.0.0"  
   },
   "scripts": {
-  "dev": "vite",
-  "build": "vite build"
-  "preview": "vite preview",
-  "deploy": "vite gh-pages"
-    }
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite gh-pages"
+  }
 }
