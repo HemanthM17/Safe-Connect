@@ -5,7 +5,7 @@
   "devDependencies": {
     "@types/react": "^19.1.8"
   },
-    "scripts": {
+  "scripts": {
   "dev": "vite",
   "build": "vite build",
   "preview": "vite preview",
