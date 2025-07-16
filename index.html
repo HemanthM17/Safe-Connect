@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe-Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              light: '#3b82f6', // blue-500
+              DEFAULT: '#2563eb', // blue-600
+              dark: '#1d4ed8', // blue-700
+            },
+            secondary: { // Expanded for gradients
+              light: '#fb923c', // orange-400
+              DEFAULT: '#f97316', // orange-500
+              dark: '#ea580c',  // orange-600
+            },
+            accent: {
+              DEFAULT: '#10b981', // emerald-500
+              light: '#34d399', // emerald-400
+              dark: '#059669', // emerald-600 
+            },
+            lightBg: '#f8fafc', // slate-50
+            darkText: '#1e293b', // slate-800
+            lightText: '#f1f5f9', // slate-100
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Custom scrollbar for a more polished look - Optional */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2563eb; /* primary-DEFAULT */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1d4ed8; /* primary-dark */
+    }
+
+    /* Animated gradient */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animated-gradient {
+      background-size: 200% 200%; /* Larger size for smooth panning */
+      animation: gradientShift 15s ease infinite;
+    }
+  </style>
+  <!-- 1. Add Babel for in-browser JSX & TypeScript transpilation -->
+  <script src="https://unpkg.com/@babel/standalone@7.24.8/babel.min.js"></script>
+  <!-- 2. Define module imports for React & Firebase -->
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js",
+    "firebase/": "https://esm.sh/firebase@^11.9.1/"
+  }
+}
+</script>
+</head>
+<body class="font-poppins bg-lightBg text-darkText">
+  <div id="root"></div>
+  <!-- 
+    IMPORTANT: Image Handling
+    For this no-build setup to work, please place your image files 
+    ("safe-connect-id-detail.jpg", "safe-connect-booth-card.jpg") 
+    in the same directory as this index.html file.
+  -->
+  <!-- 3. Load the root TSX component with Babel -->
+  <script type="text/babel" data-type="module" src="/index.tsx"></script>
+</body>
+</html>
