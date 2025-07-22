@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run build --prefix ./node_modules/vite/bin/vite.js",
+    "build": "yarn run vite build",
     "preview": "vite preview",
     "deploy": "vite gh-pages"
   }
